@@ -27,7 +27,7 @@
   `Cut columns from a table` with `c3`
 - 列の並べ替えまたは列の入れ替え<br>
   `Cut columns from a table` with `c3,c2,c1`
-- 列1二、あるエントリーが現れる数を数える<br>
+- 列1に、あるエントリーが現れる数を数える<br>
   `Datamash` with `Group by fields`: 1 and `Operation to perform`: count
 - 列1,4,5が同一である行すべてをグループ化する<br>
   `Datamash` with `Group by fields`: 1,4,5
@@ -53,11 +53,11 @@
   `Unfold columns from a table` with `Column 3` and `Comma`
 - Split the first four characters of a line into it's own column<br>
   `Replace Text in entire line` with `Find Pattern`: ^(.{4}) and `Replace Pattern`: &\t
-- Add the basepairs "TA" to the end of each sequences<br>
+- 各塩基配列の終端に"TA"の2塩基を加える<br>
   `FASTA to Tabular` → `Add column` with `TA` → `Merge Columns` → `Cut columns` → `Tabular to FASTA`
 - すべての行にダブルクォーテーション(!)を追加する<br>
   `Compute an expression on every row` with `chr(34)` (34 is the [ASCII](http://www.asciitable.com/) code for `"`)
-- 0を含まない数値を含むすべての列を数える。平均を計算するが、0であるすべての列を除外したい場合に便利です。<br>
+- 0以外の数値が含まれる全ての列を数える。平均を計算する際、0を含む列を除外したい場合に便利です。<br>
   `Compute an expression on every row` with `bool(c1) + bool(c1) + bool(c3)` ...
 
 
